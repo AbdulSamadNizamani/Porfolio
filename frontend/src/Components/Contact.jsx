@@ -5,7 +5,7 @@ import { Bounce } from "react-toastify";
 import axios from "axios";
 import Lottie from "lottie-react";
 import Cloud from '../Cloud.json'
-import { ThreeDots } from 'react-loader-spinner';
+// import { ThreeDots } from 'react-loader-spinner';
 
 const initialState = {
   name: "",
@@ -214,7 +214,7 @@ const Contact = () => {
               className="w-full md:col-span-2 bg-yellow-500 text-black cursor-pointer text-lg font-bold py-3 rounded-md hover:bg-yellow-600 transition-all flex items-center justify-center"
             >
               {isLoading ? (
-                <ThreeDots width={40} height={20} color="white"/>
+                'Loading'
               ):('Send Message')}
             </button>
           </form>
