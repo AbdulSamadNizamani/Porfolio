@@ -10,11 +10,7 @@ config({
     path:'./.env.local'
 })
 const app = express();
-app.use(cors({
-    origin: process.env.FRONTEND_URL,
-    methods:["POST","GET","PUT","DELETE","PATCH"],
-    credentials:true,
-}));
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(cookieParser());
