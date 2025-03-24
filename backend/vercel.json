@@ -5,14 +5,9 @@
     {
       "src": "/(.*)",
       "dest": "server.js",
-      "headers": [
-        {
-          "source": "/(.*)",
-          "headers":{
-            "Access-Control-Allow-Origin": "*"
-          }
-        }
-      ]
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
     }
   ]
 }
