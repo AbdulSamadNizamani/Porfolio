@@ -2,10 +2,13 @@ const express = require("express")
 const nodemailer = require("nodemailer")
 const Contact = require("../Models/ContactSchema.js")
 
+const Connect = require("../db/Connect.js");
+
 const router = express.Router();
 
 router.post("/contact", async (req, res) => {
   try {
+    await Connect();
     const { name, email, phone, message } = req.body;
     const transporter = nodemailer.createTransport({
       service: "gmail",
