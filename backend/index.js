@@ -1,9 +1,11 @@
-import express from 'express';
-import { config } from 'dotenv';
-import cors from 'cors'
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import router from './router/Contactdata.js';
+const express = require("express");
+const config = require("dotenv").config;
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const router = require("./router/Contactdata.js")
+
+
 config({
     path:'./.env.local'
 })
@@ -19,4 +21,4 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 app.use('/contactauth',router);
 
-export default app;
+module.exports = app

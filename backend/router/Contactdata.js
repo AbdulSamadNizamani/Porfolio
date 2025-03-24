@@ -1,7 +1,8 @@
-import expres from "express";
-import { Contact } from "../Models/ContactSchema.js";
-import nodemailer from "nodemailer";
-const router = expres.Router();
+const express = require("express")
+const nodemailer = require("nodemailer")
+const Contact = require("../Models/ContactSchema.js")
+
+const router = express.Router();
 
 router.post("/contact", async (req, res) => {
   try {
@@ -196,4 +197,4 @@ router.post("/contact", async (req, res) => {
   }
 });
 
-export default router
+module.exports = router
