@@ -5,7 +5,7 @@ import { Bounce } from "react-toastify";
 import axios from "axios";
 import Lottie from "lottie-react";
 import Cloud from '../Cloud.json'
-
+import { ThreeDots } from 'react-loader-spinner';
 
 const initialState = {
   name: "",
@@ -114,12 +114,12 @@ const Contact = () => {
 
     try {
       setIsLoading(true);
-      axios.defaults.withCredentials = true;
+      // axios.defaults.withCredentials = true;
       const contact1 = { name, email, phone, message };
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/contactauth/contact`,
         contact1,
-        { withCredentials: true }
+        // { withCredentials: true }
       );
 
       if (res?.status === 200) {
@@ -213,7 +213,9 @@ const Contact = () => {
               type="submit"
               className="w-full md:col-span-2 bg-yellow-500 text-black cursor-pointer text-lg font-bold py-3 rounded-md hover:bg-yellow-600 transition-all flex items-center justify-center"
             >
-              {isLoading ? 'Sending...':'Send Message'}
+              {isLoading ? (
+                <ThreeDots width={40} height={20} color="white"/>
+              ):('Send Message')}
             </button>
           </form>
         </div>
